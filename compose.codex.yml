@@ -1,0 +1,14 @@
+name: ashare-mcp-baostock
+services:
+  server:
+    build: .
+    container_name: ashare-mcp-baostock
+    restart: unless-stopped
+    mem_limit: 512m
+    ports:
+      - "127.0.0.1:18002:3000"
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
